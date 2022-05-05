@@ -4,13 +4,13 @@ import styled from 'styled-components'
 const TitleH1 = styled.h1`
   display: inline-block;
   text-align: center;
-  margin: 20px 20px;
+  margin: ${({margin}) => margin ? margin : '20px 0'};
   width: ${({width}) => width ? width : 'auto'};
   user-select: none;
 `
 
-export default function Title({text, width}) {
+export default function Title({text, width, margin}) {
   return (
-    <TitleH1 width={width}>{text}</TitleH1>
+    <TitleH1 width={width} margin={margin}>{text}</TitleH1>
   )
 }

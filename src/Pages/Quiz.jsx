@@ -9,6 +9,7 @@ import dataBase from '../data';
 import RadioSection from '../components/RadioSection';
 import BackArrow from '../components/BackArrow';
 import ForwardArrow from '../components/ForwardArrow';
+import Error from '../components/Error';
 
 
 const Header = styled.header`
@@ -21,6 +22,20 @@ export default function Quiz() {
   const [data] = useState(dataBase);
   const [counter, setCounter] = useState(0);
   const [answers, setAnswers] = useState(data.map(() => 'empty'));
+  const [error, setError] = useState(null);
+
+  function checkQuiz() {
+    console.log('check')
+    let allComplete = true;
+    answers.forEach(answer => {
+      if(answer === 'empty') allComplete = false;
+    } )
+    if(allComplete) {
+      console.log('End page');
+    } else {
+      setError('You have some not answered questions!')
+    }
+  }
  
   return (
     <>
@@ -31,9 +46,10 @@ export default function Quiz() {
           <ForwardArrow func={() => setCounter(prev => (prev < data.length - 1 ? (prev += 1) : prev))} />
         </Header>
         <Question text={data[counter].question} />
-        <RadioSection count={counter}/>
-        <Button text='Next' func={() => setCounter(prev => (prev < data.length - 1 ? (prev += 1) : prev))} />
+        <RadioSection count={counter} set={setAnswers} answers={answers}/>
+        <Button text='Check' func={checkQuiz} />
       </Main>
+      <Error text={error}/>
     </>
   );
 }

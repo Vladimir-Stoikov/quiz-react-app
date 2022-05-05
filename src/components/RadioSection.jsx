@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components';
 import dataBase from '../data';
 
@@ -39,14 +39,19 @@ const Li = styled.li`
   margin: 8px 0;
 `
 
-export default function RadioSection({count}) {
+export default function RadioSection({count, set, answers}) {
 
   const [data] = useState(dataBase);
-  const [currentOption, setCurrentOption] = useState('');
+  const [currentOption, setCurrentOption] = useState(answers[count] ? answers[count] : '');
 
   function handleChange(e) {
     setCurrentOption(e.target.id);
+    set(prev => prev.map((el, id) => id === count ? e.target.id : el));
   }
+
+  useEffect(() => {
+    setCurrentOption(answers[count]);
+  }, [count]);
 
   return  <AnswersUl>
   <Li>

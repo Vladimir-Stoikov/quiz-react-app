@@ -5,7 +5,7 @@ const dataBase = [
     b: 'C',
     c: 'Python',
     d: 'JavaScript',
-    correct: 'd',
+    correct: '4',
   },
   {
     question: 'What does CSS stand for?',
@@ -13,7 +13,7 @@ const dataBase = [
     b: 'Cascading Style Sheets',
     c: 'Cascading Simple Sheets',
     d: 'Cars SUVs Sailboats',
-    correct: 'b',
+    correct: '2',
   },
   {
     question: 'What does HTML stand for?',
@@ -21,7 +21,7 @@ const dataBase = [
     b: 'Hypertext Markdown Language',
     c: 'Hyperloop Machine Language',
     d: 'Helicopters Terminals Motorboats Lamborginis',
-    correct: 'a',
+    correct: '1',
   },
   {
     question: 'What year was JavaScript launched?',
@@ -29,7 +29,7 @@ const dataBase = [
     b: '1995',
     c: '1994',
     d: 'none of the above',
-    correct: 'b',
+    correct: '2',
   },
   {
     question: 'JavaScript is a ___ -side programming language.',
@@ -37,7 +37,7 @@ const dataBase = [
     b: 'Server',
     c: 'Both',
     d: 'None',
-    correct: 'c',
+    correct: '3',
   },
   {
     question: 'Which JavaScript label catches all the values, except for the ones specified',
@@ -45,7 +45,7 @@ const dataBase = [
     b: 'Label',
     c: 'Try',
     d: 'Default',
-    correct: 'd',
+    correct: '4',
   },
 ];
 

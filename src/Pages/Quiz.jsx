@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Main from '../components/Main';
@@ -10,6 +11,7 @@ import RadioSection from '../components/RadioSection';
 import BackArrow from '../components/BackArrow';
 import ForwardArrow from '../components/ForwardArrow';
 import Error from '../components/Error';
+
 
 
 const Header = styled.header`
@@ -24,14 +26,23 @@ export default function Quiz() {
   const [answers, setAnswers] = useState(data.map(() => 'empty'));
   const [error, setError] = useState(null);
 
+  const navigat = useNavigate();
+
   function checkQuiz() {
-    console.log('check')
+    console.log(answers[0], data[0].correct);
     let allComplete = true;
+    let correctAnswer = 0;
     answers.forEach(answer => {
-      if(answer === 'empty') allComplete = false;
+      // if(answer === 'empty') allComplete = false;
     } )
     if(allComplete) {
-      console.log('End page');
+      answers.forEach((answer, id) => {
+        if(answer.slice(-1) === data[id].correct) {
+          ++correctAnswer;
+        }
+      })
+      console.log('End page. Correct answers: ' + correctAnswer );
+      navigat('/End');
     } else {
       setError('You have some not answered questions!')
     }

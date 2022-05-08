@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Vladimir-Stoikov/quiz-react-app/precache-manifest.f1e9c5675e1c1fe4e2883a454b7cf863.js"
+  "/quiz-react-app/precache-manifest.65f481817b0085bbb440242cfae46b68.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/Vladimir-Stoikov/quiz-react-app/index.html", {
+workbox.routing.registerNavigationRoute("/quiz-react-app/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });

@@ -15,7 +15,7 @@ const BackArrowSt = styled(ArrowBackIosIcon)`
 `
 
 const ButtonArrow = styled.button`
-  display: ${({disable}) => disable ? 'none' : 'inline-block'};
+  opacity: ${({disable}) => disable ? '0.5' : '1'};
   background: transparent;
   border: none;
 `

@@ -12,15 +12,13 @@ export default function End() {
   const navigate = useNavigate();
 
   function returnToMenu() {
-
-      navigate('/');
-
+    navigate('/');
   }
 
   return <Main>
-    <Title text='Congratulations' width='100%'/>
-    <Description text={`You have - ${location.state} correct ${location.state === 1 ? 'answer' : 'answers'}!`}/>
-    <Button text='Restart' func={returnToMenu}/>
+    <Title text={location.state === null ? 'Error' : 'Congratulations'} width='100%'/>
+    <Description text={location.state === null ? 'Wrong access' : `You have - ${location.state} correct ${location.state === 1 ? 'answer' : 'answers'}!`}/>
+    <Button text={location.state === null ? 'Menu' : 'Restart'} func={returnToMenu}/>
   
   </Main>  
 }

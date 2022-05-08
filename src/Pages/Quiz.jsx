@@ -50,7 +50,7 @@ export default function Quiz() {
         <Header>
           <BackArrow disable={counter === 0 ? true : false} func={() => setCounter(prev => (prev !== 0 ? (prev -= 1) : prev))} />
           <Title text={'Question ' + (counter + 1) + ' / ' + data.length} margin='20px 20px'/>
-          <ForwardArrow func={() => setCounter(prev => (prev < data.length - 1 ? (prev += 1) : prev))} />
+          <ForwardArrow disable={counter === data.length - 1 ? true : false} func={() => setCounter(prev => (prev < data.length - 1 ? (prev += 1) : prev))} />
         </Header>
         <Question text={data[counter].question} />
         <RadioSection count={counter} set={setAnswers} answers={answers}/>

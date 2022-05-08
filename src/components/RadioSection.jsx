@@ -10,6 +10,9 @@ const AnswersUl = styled.ul`
   justify-content: center;
   align-items: start;
   margin: 5% 0 0 15%;
+  @media (max-width: 450px) {
+    margin-left: 8%;
+  }
 `;
 
 
@@ -37,6 +40,9 @@ const Li = styled.li`
   font-size: 1.2rem;
   user-select: none;
   margin: 8px 0;
+  @media (max-width: 450px) {
+    font-size: 1rem;
+  }
 `
 
 export default function RadioSection({count, set, answers}) {

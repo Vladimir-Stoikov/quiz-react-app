@@ -25,6 +25,12 @@ const BottomButton = styled.button`
   &:active {
     background-color: var(--first-background-active-color);
   }
+  @media (max-width: 400px) { 
+    border-radius: 0;
+  }
+   @media (max-width: 300px) { 
+    font-size: 1.2rem;
+  }
 `
 
 export default function Button({text, func}) {
